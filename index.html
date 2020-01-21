@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artists Portal</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 	<!-- Using Vue.js framework to build and manage content on the frontend -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 		<!-- Promised based http-client compatible with Vue.js-->
+	<link rel="stylesheet" type="text/css" href="style.css">				<!-- Unified css file containing styles for all elements in the DOM -->
+</head>
+<body>
+	<div id="container"> 	<!-- Component containing the all elements and bind with Vue.js to manage the inside content-->
+	    <form>
+	        <div class="search_input">
+	            <input v-model="artist_name" placeholder="Please enter artist name..."> 
+	            <button v-on:click="validate">Search</button>
+	        </div>
+	    </form>
+	    <section id="loading" v-if="loading">Loading...</section> <!-- Show loading while content is being fetched-->
+	    <section id="artist_details" v-if="found"> <!-- Artist details section from API call -->
+	    	<div id="artist_info"> <!-- Artist's basic info -->
+	    		<h1>{{ name }}</h1> <!-- Artist's name -->
+	    		<img :src="thumbnail"> <!-- Artist's image -->
+	    		<a v-if="facebook_page_url" :href="facebook_page_url"><h1>Facebook Page</h1></a> <!-- Artist's Facebook page link, if available -->
+	    	</div>
+	    	<div id="artist_events"> <!-- Artists events details section -->
+	        	<h2>Upcoming events: {{ upcoming_events }}</h2> <!-- Display total number of upcoming events -->
+	        		<div class="event_info" v-if="upcoming_events"> <!-- Show events table header -->
+		            	<div class="event_name">Venue</div>
+		                <div class="event_location">Location</div>
+		                <div class="event_date">Date</div>
+	        	 	</div>
+	        	<div v-for="event in events" class="event_info"> <!-- Show events if found -->
+	            	<div class="event_name">{{ event.venue.name }}</div> <!-- Event venue -->
+	                <div class="event_location">{{ event.venue.city }}, {{ event.venue.country }}</div> <!-- Event location -->
+	                <div class="event_date">{{ event.datetime | getDate }}</div> <!-- Event date -->
+	        	</div>
+	    	</div>
+		</section>
+		<section id="error" v-if="error">
+	    	<h3 style="color:#de4444;">{{ error_message }}</h3> <!-- Show error if submission yeild no results or something is wrong with the input query -->
+	    </section>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script> <!-- Invoking custom Javascript after DOM has been loaded -->
+</html>

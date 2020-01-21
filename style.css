@@ -1,0 +1,169 @@
+ /* Setting up html background and applying global font-family to allment */
+ body {
+        background-color:#d1d1d1;
+        font-family: sans-serif;
+    }
+
+/* Setting up maximum container width for root element for desktop screens and auto center on the page */
+#container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+/* 
+Search form css starts
+Setting up search form width and alignment within the container 
+*/
+form {
+    width: 50%; 
+    margin: 30px auto; 
+}
+/* Making search form elements flexible to adjust their layout content according to available space */
+.search_input {
+    display:flex;
+}
+.search_input input {
+    width: 80%; 
+    padding: 10px 15px;
+}
+.search_input button {
+    width:20%;
+    background-color:#4266b2;
+    color:#ffffff;
+}
+.search_input input, .search_input button {
+    font-size:18px;
+    border:0;
+}
+/* Search form CSS ends */
+
+/* Error message css starts */
+#error {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+/* Error message css ends */
+
+/* Loading element/button css starts */
+#loading {
+	width:30%;
+	margin: 0 auto;
+	padding:15px;
+	border-radius:50px;
+	background-color:#4266b2;
+	color:#ffffff;
+	font-size:24px;
+	text-align: center;
+}
+/* Loading element/button css ends */
+
+/* 
+Artist details section css starts 
+Setting up the section to flex to make elements within flexible
+*/
+#artist_details {
+    padding:25px 15px;
+    display: flex;
+}
+
+/* Artist basic information css starts here - left column */
+#artist_info {
+    flex: 0 0 30%; 
+    width: 30%; 
+    text-align: center;
+    margin-right:15px;
+}
+#artist_info h1 {
+    background-color: #ffffff; 
+    padding: 15px 0px; 
+    border-radius: 50px;
+}
+#artist_info img {
+    border-radius:160px;
+}
+#artist_info a {
+	text-decoration:none;
+	color:inherit;
+}
+#artist_info a h1:hover {
+	background-color:#4266b2;
+	color:#ffffff;
+}
+/* Artist basic information css ends here - left column */
+
+/* Artist events section css starts here */
+#artist_events {
+    flex: 0 0 70%; 
+    width: 70%;
+    background-color: #ffffff;
+    margin-left:15px;
+}
+
+/* Artist events section heading css starts */
+#artist_events h2 {
+    text-align:center;
+    background-color:#4266b2;
+    margin:0;
+    padding:15px;
+    font-size:25px;
+    color:#ffffff;
+}
+/* Artist events section heading css ends */
+
+/* 
+Events details css starts 
+Setting it as table so that event details is in one row
+*/
+.event_info {
+    display: inline-table;
+    table-layout: fixed;
+    width: 100%;
+    border-bottom:1px solid #d1d1d1;
+}
+.event_info:nth-child(2) {
+	font-weight:bold;
+}
+.event_info:nth-child(n+3):hover {
+	background-color:#4266b2;
+	color:#ffffff;
+}
+.event_info .event_name, .event_info .event_location, .event_info .event_date {
+    display:table-cell;
+    padding:10px;
+    text-align:left;
+}
+.event_info .event_name, .event_info .event_location {
+	width:42.5%;
+}
+.event_info .event_date {
+	width:15%;
+}
+/* Events details css ends */
+
+/*  Artist details section css ends */
+
+/*
+Responsive css starts 
+Setting up the maximum width of 900px. Before this width, elements be stacked on mobile devices
+*/
+@media only screen and (max-width: 900px) {
+    #container {
+        width:100%;
+    }
+    form {
+        width:90%;
+    }
+    #artist_details {
+        flex-direction:column;
+
+    }
+    #artist_info {
+        width:80%;
+        margin: 0 auto;
+    }
+    #artist_events {
+        width:100%;
+        margin:25px auto 0 auto;
+    }
+}
+/* Responsive css starts */
