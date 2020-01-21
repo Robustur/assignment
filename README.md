@@ -14,8 +14,9 @@ The artist details section has two sub-sections:
  i) Left section containing artist basic details; name, thumbnail, and facebook link
 ii) Right section containing displaying number of events and their details; venue name, location, and date
 
- If the api call is successful and it returs a valid artist details. It is passed to this section for display.
+If the api call is successful and it returs a valid artist details. It is passed to this section for display.
 
+The app design is also responsive. All elements are stacked on mobile for easy navigation.
 
  # App ID
  The bandsintown.com no longer allows usage of their api for generic use. Now,it only allows artists, people associated with artists, and students. Only these users are assigned with app_id to be used with api call: https://www.artists.bandsintown.com/support/api-installation and https://intercom.help/bandsintown-manager/en/articles/3372745-can-i-have-access-to-the-api-and-an-app-id-if-i-m-not-an-artist
