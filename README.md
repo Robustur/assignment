@@ -21,7 +21,7 @@ The app design is also responsive. All elements are stacked on mobile for easy n
  # App ID
  The bandsintown.com no longer allows usage of their api for generic use. Now,it only allows artists, people associated with artists, and students. Only these users are assigned with app_id to be used with api call: https://www.artists.bandsintown.com/support/api-installation and https://intercom.help/bandsintown-manager/en/articles/3372745-can-i-have-access-to-the-api-and-an-app-id-if-i-m-not-an-artist
 
- An email was sent to api@bandsintown.com to request an app_id without any reference of Keeptruckin or interview assignment. The support agent provided me with the temporary app_id. The email conversation can be provided, if requested.
+ An email was sent to api@bandsintown.com to request an app_id without any reference of company name or interview assignment. The support agent provided me with the temporary app_id. The email conversation can be provided, if requested.
 
 
  ------------------------------------------------------------------
